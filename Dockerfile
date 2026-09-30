@@ -32,6 +32,10 @@ WORKDIR /app
 # Copy apps
 COPY --from=builder /app/apps/server/dist /app/apps/server/dist
 COPY --from=builder /app/apps/client/dist /app/apps/client/dist
+# The lockfile lists the client workspace. pnpm 11 refuses a frozen install
+# when that package.json is absent. The client is static files; do not
+# install its dependencies.
+COPY --from=builder /app/apps/client/package.json /app/apps/client/package.json
 COPY --from=builder /app/apps/server/package.json /app/apps/server/package.json
 
 # Copy packages
@@ -51,7 +55,7 @@ RUN chown -R node:node /app
 
 USER node
 
-RUN pnpm install --frozen-lockfile --prod && rm -rf /home/node/.cache/pnpm
+RUN pnpm install --frozen-lockfile --prod --filter "!client" && rm -rf /home/node/.cache/pnpm
 
 RUN mkdir -p /app/data/storage
 
