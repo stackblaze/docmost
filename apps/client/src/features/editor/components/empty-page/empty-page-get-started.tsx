@@ -3,13 +3,13 @@ import { Button } from "@mantine/core";
 import { IconTable, IconLayoutKanban } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 import { useAtomValue } from "jotai";
-import { useConvertPageToBaseMutation } from "@/ee/base/queries/base-query";
+import { useConvertPageToBaseMutation } from "@/features/base/base-query";
 import {
   pageEditorAtom,
   yjsSyncedAtom,
 } from "@/features/editor/atoms/editor-atoms";
-import { useHasFeature } from "@/ee/hooks/use-feature";
-import { Feature } from "@/ee/features";
+import { useHasFeature } from "@/features/entitlement/use-feature";
+import { Feature } from "@/features/entitlement/features";
 import classes from "./empty-page-get-started.module.css";
 
 type EmptyPageGetStartedProps = {

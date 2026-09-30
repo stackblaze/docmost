@@ -57,9 +57,9 @@ import { searchSpotlight } from "@/features/search/constants";
 const TemplatePickerModal = React.lazy(
   () => import("@/ee/template/components/template-picker-modal"),
 );
-import { useHasFeature } from "@/ee/hooks/use-feature";
-import { useUpgradeLabel } from "@/ee/hooks/use-upgrade-label";
-import { Feature } from "@/ee/features";
+import { useHasFeature } from "@/features/entitlement/use-feature";
+import { useUpgradeLabel } from "@/features/entitlement/use-upgrade-label";
+import { Feature } from "@/features/entitlement/features";
 import { ErrorBoundary } from "react-error-boundary";
 
 export function SpaceSidebar() {

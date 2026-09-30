@@ -45,6 +45,17 @@ try {
   }
 }
 
+const extModules = [];
+try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  if (require('./ext/ext.module')?.ExtModule) {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    extModules.push(require('./ext/ext.module')?.ExtModule);
+  }
+} catch {
+  // AGPL extension module is optional
+}
+
 @Module({
   imports: [
     ClsModule.forRoot({
@@ -52,7 +63,9 @@ try {
       middleware: { mount: true },
     }),
     LoggerModule,
-    ...(enterpriseModules.length > 0 ? [] : [NoopAuditModule]),
+    ...(enterpriseModules.length > 0 || extModules.length > 0
+      ? []
+      : [NoopAuditModule]),
     CoreModule,
     DatabaseModule,
     EnvironmentModule,
@@ -101,6 +114,7 @@ try {
     ThrottleModule,
     OutboundModule,
     ...enterpriseModules,
+    ...extModules,
   ],
   controllers: [AppController],
   providers: [

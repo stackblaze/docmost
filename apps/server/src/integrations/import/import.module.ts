@@ -15,7 +15,7 @@ import { PageModule } from '../../core/page/page.module';
     FileTaskProcessor,
     ImportAttachmentService,
   ],
-  exports: [ImportService, ImportAttachmentService],
+  exports: [ImportService, ImportAttachmentService, FileImportTaskService],
   controllers: [ImportController, FileTaskController],
   imports: [StorageModule, PageModule],
 })

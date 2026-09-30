@@ -101,7 +101,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
 
     try {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
-      ApiKeyModule = require('./../../../ee/api-key/api-key.service');
+      ApiKeyModule = require('./../../../ext/api-key/api-key.service');
       isApiKeyModuleReady = true;
     } catch (err) {
       this.logger.debug(
@@ -127,7 +127,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
 
     try {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
-      OAuthStrategyModule = require('./../../../ee/oauth/services/oauth-strategy.service');
+      OAuthStrategyModule = require('./../../../ext/oauth/services/oauth-strategy.service');
       isOAuthModuleReady = true;
     } catch (err) {
       this.logger.debug(

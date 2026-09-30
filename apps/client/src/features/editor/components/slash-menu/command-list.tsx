@@ -17,9 +17,9 @@ import {
 import classes from "./slash-menu.module.css";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
-import { useHasFeature } from "@/ee/hooks/use-feature";
-import { Feature } from "@/ee/features";
-import { useUpgradeLabel } from "@/ee/hooks/use-upgrade-label";
+import { useHasFeature } from "@/features/entitlement/use-feature";
+import { Feature } from "@/features/entitlement/features";
+import { useUpgradeLabel } from "@/features/entitlement/use-upgrade-label";
 
 const CommandList = ({
   items,

@@ -8,12 +8,21 @@ import { getGroups } from "@/features/group/services/group-service.ts";
 import { QueryParams } from "@/lib/types.ts";
 import { getWorkspaceMembers } from "@/features/workspace/services/workspace-service.ts";
 import { getLicenseInfo } from "@/ee/licence/services/license-service.ts";
-import { getSsoProviders } from "@/ee/security/services/security-service.ts";
+import { getSsoProviders } from "@/features/sso/sso-service";
 import { getShares } from "@/features/share/services/share-service.ts";
-import { getApiKeys } from "@/ee/api-key";
-import { getAuditLogs } from "@/ee/audit/services/audit-service";
-import { getVerificationList } from "@/ee/page-verification/services/page-verification-service";
-import { getScimTokens } from "@/ee/scim/services/scim-token-service";
+import { getApiKeys } from "@/features/api-key/api-key-service";
+import api from "@/lib/api-client";
+import { getVerificationList } from "@/features/page-verification/services/page-verification-service";
+
+async function getAuditLogs(params?: any) {
+  const req = await api.post("/audit", params);
+  return req.data;
+}
+
+async function getScimTokens(params?: any) {
+  const req = await api.post("/scim-tokens", params);
+  return req.data;
+}
 
 export const prefetchWorkspaceMembers = () => {
   const params: QueryParams = { limit: 100, query: "" };

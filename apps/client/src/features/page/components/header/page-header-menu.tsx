@@ -45,11 +45,11 @@ import { PageEditModeToggle } from "@/features/user/components/page-state-pref.t
 import MovePageModal from "@/features/page/components/move-page-modal.tsx";
 import PageAttachmentsModal from "@/features/attachments/components/page-attachments-modal.tsx";
 import { useTimeAgo } from "@/hooks/use-time-ago.tsx";
-import { PageShareModal } from "@/ee/page-permission";
+import { PageShareModal } from "@/features/page-permission";
 import {
   PageVerificationMenuItem,
   PageVerificationModal,
-} from "@/ee/page-verification";
+} from "@/features/page-verification";
 import {
   useFavoriteIds,
   useAddFavoriteMutation,

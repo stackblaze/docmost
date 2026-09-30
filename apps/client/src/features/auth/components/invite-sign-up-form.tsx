@@ -18,7 +18,7 @@ import classes from "@/features/auth/components/auth.module.css";
 import { useGetInvitationQuery } from "@/features/workspace/queries/workspace-query.ts";
 import { useRedirectIfAuthenticated } from "@/features/auth/hooks/use-redirect-if-authenticated.ts";
 import { useTranslation } from "react-i18next";
-import SsoLogin from "@/ee/components/sso-login.tsx";
+import SsoLogin from "@/features/sso/sso-login.tsx";
 import { AuthLayout } from "./auth-layout.tsx";
 
 const formSchema = z.object({

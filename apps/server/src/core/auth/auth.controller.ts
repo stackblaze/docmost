@@ -65,7 +65,7 @@ export class AuthController {
     let isMfaModuleReady = false;
     try {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
-      MfaModule = require('./../../ee/mfa/services/mfa.service');
+      MfaModule = require('./../../ext/mfa/services/mfa.service');
       isMfaModuleReady = true;
     } catch (err) {
       this.logger.debug(

@@ -43,7 +43,7 @@ export class FileTaskProcessor extends WorkerHost implements OnModuleDestroy {
 
   private getPdfExportService() {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const PdfExportModule = require('./../../../ee/pdf-export/pdf-export.service');
+    const PdfExportModule = require('./../../../ext/pdf-export/pdf-export.service');
     return this.moduleRef.get(PdfExportModule.PdfExportService, {
       strict: false,
     });

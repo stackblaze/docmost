@@ -21,10 +21,10 @@ import {
 } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import { getSpaceUrl } from "@/lib/config.ts";
-import { useHasFeature } from "@/ee/hooks/use-feature";
-import { Feature } from "@/ee/features";
-import { usePersonalSpaceQuery } from "@/ee/personal-space/queries/personal-space-query";
-import CreatePersonalSpaceModal from "@/ee/personal-space/components/create-personal-space-modal";
+import { useHasFeature } from "@/features/entitlement/use-feature";
+import { Feature } from "@/features/entitlement/features";
+import { usePersonalSpaceQuery } from "@/features/personal-space/personal-space-query";
+import CreatePersonalSpaceModal from "@/features/personal-space/create-personal-space-modal";
 import { useAtom } from "jotai";
 import { currentUserAtom } from "@/features/user/atoms/current-user-atom.ts";
 import { Link } from "react-router-dom";

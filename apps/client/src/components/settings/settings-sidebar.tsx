@@ -22,9 +22,9 @@ import { useTranslation } from "react-i18next";
 import { isCloud } from "@/lib/config.ts";
 import useUserRole from "@/hooks/use-user-role.tsx";
 import { useAtom } from "jotai";
-import { entitlementAtom } from "@/ee/entitlement/entitlement-atom";
-import { Feature } from "@/ee/features";
-import { useUpgradeLabel } from "@/ee/hooks/use-upgrade-label";
+import { entitlementAtom } from "@/features/entitlement/entitlement-atom";
+import { Feature } from "@/features/entitlement/features";
+import { useUpgradeLabel } from "@/features/entitlement/use-upgrade-label";
 import {
   prefetchApiKeyManagement,
   prefetchApiKeys,

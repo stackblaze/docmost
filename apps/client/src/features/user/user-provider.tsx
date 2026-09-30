@@ -11,8 +11,8 @@ import { useTreeSocket } from "@/features/websocket/use-tree-socket.ts";
 import { useNotificationSocket } from "@/features/notification/hooks/use-notification-socket.ts";
 import { useCollabToken } from "@/features/auth/queries/auth-query.tsx";
 import { Error404 } from "@/components/ui/error-404.tsx";
-import { useEntitlements } from "@/ee/entitlement/use-entitlements";
-import { entitlementAtom } from "@/ee/entitlement/entitlement-atom";
+import { useEntitlements } from "@/features/entitlement/use-entitlements";
+import { entitlementAtom } from "@/features/entitlement/entitlement-atom";
 
 export function UserProvider({ children }: React.PropsWithChildren) {
   const [, setCurrentUser] = useAtom(currentUserAtom);
